@@ -30,7 +30,7 @@ class NetworkDataExtract():
         try:
             data = pd.read_csv(filepath)
             data.reset_index(drop=True, inplace=True)
-            records = list(json.loads(data.T.to_json()).values()) 
+            records = list(json.loads(data.T.to_json()).values())  
             return records
         except Exception as e:
             raise NetworkSecurityException(e, sys)
